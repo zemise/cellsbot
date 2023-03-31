@@ -1,0 +1,8 @@
+rootProject.name = 'cellsbot'
+include (
+        'common',
+        'common:loader-utils',
+        'bungee'
+)
+
+

@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="cellsbot.bungee.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cellsbot_bungee_main_jar</output-path>
+    <root id="archive" name="cellsbot.bungee.main.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/bungee/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="cellsbot.bungee.main" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,21 @@
+01:36:05[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:36:06[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:36:41[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:36:42[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:36:51[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:36:51[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:39:42[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:39:43[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:40:57[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:40:57[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:40:57[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - IP数据库ip2region.xdb下载或者加载成功
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - Content-Type = application/octet-stream
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - Content-Disposition = attachment
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - Content-Length = 11070130
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - File name = ip2region.xdb
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - Content-Type = application/octet-stream
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - Content-Disposition = attachment
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - Content-Length = 11070130
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - File name = ip2region.xdb
+01:44:29[main] INFO  c.z.c.common.utils.DownloadUtil.ContinuousDownload - 文件已经存在，无需下载
