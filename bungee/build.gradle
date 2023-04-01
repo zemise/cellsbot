@@ -1,40 +1,27 @@
-plugins {
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
-}
+apply plugin: 'application'
+apply plugin: 'java'
+
+archivesBaseName = 'cellsbot-bungee'
 
 repositories {
     mavenCentral()
+    // md-5 bungee 所需要
+    maven { url("https://oss.sonatype.org/content/repositories/snapshots/") }
 }
+
 
 dependencies {
     implementation project(':common')
-    compileClasspath project(':common:loader-utils')
-
     compileOnly 'net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT'
-    compileOnly('net.kyori:adventure-platform-bungeecord:4.3.0') {
-        exclude(module: 'adventure-bom')
-        exclude(module: 'adventure-api')
-        exclude(module: 'adventure-nbt')
-    }
-}
-
-shadowJar {
-    archiveFileName = 'cellbots-bungee.jar'
-
-    dependencies {
-        include(dependency('com.zemise.cellsbot:.*'))
-    }
-
-    relocate 'net.md-5', 'com.zemise.cellsbot.lib.md-5'
-}
-
-artifacts {
-    archives shadowJar
 }
 
 jar {
-    manifest {
-        attributes 'Main-Class': 'com.zemise.cellsbot.Test'
+    from {
+        duplicatesStrategy = 'exclude'
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-
+    manifest {
+        attributes 'Main-Class': 'com.zemise.cellsbot.bungee.Test'
+    }
 }
+

@@ -1,32 +1,32 @@
-plugins {
-    id 'org.cadixdev.licenser' version '0.6.1' apply false
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+    }
 }
 
-defaultTasks 'licenseFormat', 'build'
+allprojects {
+    apply plugin: "java"
 
-subprojects{
-    apply plugin: 'java'
-    apply plugin: 'maven-publish'
-    apply plugin: 'org.cadixdev.licenser'
-
-    group = 'com.zemise.cellsbot'
-    version = '1.2-dev'
-
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
-    }
-
-    jar {
-        from '../LICENSE.txt'
-    }
-
+    group = "com.zemise.cellsbot"
+    version = "1.2-Dev"
 
     repositories {
         mavenCentral()
-        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    tasks.withType(Jar) {
+        manifest {
+            attributes 'Main-Class': 'com.zemise.cellsbot.bungee.Test'
+        }
     }
 }

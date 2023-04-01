@@ -1,12 +1,13 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.7.22'
     id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
-dependencies {
+archivesBaseName = 'cellsbot-common'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 
     compileOnly 'net.mamoe:mirai-core-jvm:2.15.0-M1'
 
@@ -17,6 +18,21 @@ dependencies {
     implementation 'ch.qos.logback:logback-core:1.4.6'
 }
 
-test {
-    useJUnitPlatform()
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
+
+jar {
+    from {
+        // common模块中包含了重复的module-info.class文件，需要设置一个解决重复文件的策略。
+        // 可能是因为Mirai库自身包含了一个module-info.class文件。
+        // 而common模块也声明了一个module-info.java文件，因此出现了冲突。
+        // duplicatesStrategy选项设置为'exclude'，表示当出现重复文件时，Gradle将自动忽略其中一个文件
+        duplicatesStrategy = 'exclude'
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
