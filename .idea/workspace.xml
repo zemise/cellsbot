@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="log配置">
+    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="重构项目基本结构，实现各模块基本编译">
       <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bukkit/build.gradle" afterDir="false" />
@@ -183,7 +183,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680269578586</updated>
       <workItem from="1680269580936" duration="5035000" />
-      <workItem from="1680274737544" duration="23657000" />
+      <workItem from="1680274737544" duration="24006000" />
     </task>
     <task id="LOCAL-00001" summary="log配置">
       <created>1680336724098</created>
@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680336724098</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="重构项目基本结构，实现各模块基本编译">
+      <created>1680371016717</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680371016717</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +218,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="log配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="log配置" />
+    <MESSAGE value="重构项目基本结构，实现各模块基本编译" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构项目基本结构，实现各模块基本编译" />
   </component>
 </project>
