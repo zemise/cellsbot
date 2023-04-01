@@ -1,4 +1,7 @@
-package com.zemise.cellsbot.common.utils;
+package com.zemise.cellsbot.common.utils.DownloadUtil;
+
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,20 +15,17 @@ import java.net.URL;
  * @Date 2023/3/31
  * @Description 断点续传下载
  */
+@Slf4j
 public class ContinuousDownload {
-
+    @Getter
     private static File downloadedFile;
     private static final int BUFFER_SIZE = 4096;
-
-    public static File getDownloadedFile() {
-        return downloadedFile;
-    }
 
     /**
      * 下载文件，支持断点下载
      * @param fileURL 文件URL
      * @param saveDir 存储路径
-     * @throws IOException
+     * @throws IOException 抛出
      */
     public static void downloadFile(String fileURL, String saveDir) throws IOException {
         URL url = new URL(fileURL);
@@ -33,7 +33,7 @@ public class ContinuousDownload {
 
         // 检查HTTP响应码是否为200
         if (httpConn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-            System.out.println("文件下载失败. 响应码: " + httpConn.getResponseCode());
+            log.info("文件下载失败. 响应码: " + httpConn.getResponseCode());
             return;
         }
 
@@ -57,22 +57,22 @@ public class ContinuousDownload {
             fileName = urlParts[urlParts.length - 1].split("\\?")[0];
         }
 
-        System.out.println("Content-Type = " + contentType);
-        System.out.println("Content-Disposition = " + disposition);
-        System.out.println("Content-Length = " + contentLength);
-        System.out.println("File name = " + fileName);
+        log.info("Content-Type = " + contentType);
+        log.info("Content-Disposition = " + disposition);
+        log.info("Content-Length = " + contentLength);
+        log.info("File name = " + fileName);
 
         // 检查是否已经存在同名文件，如果已存在，则判断文件大小是否一致
         File localFile = new File(saveDir + File.separator + fileName);
         long downloadedLength = 0;
         if (localFile.exists()) {
             if (localFile.length() == contentLength) {
-                System.out.println("文件已经存在，无需下载");
+                log.info("文件已经存在，无需下载");
                 return;
             } else {
                 // 如果文件已经存在，那么使用断点续传方式下载
                 downloadedLength = localFile.length();
-                System.out.println("文件已经存在，使用断点续传方式下载，已下载：" + downloadedLength + "字节");
+                log.info("文件已经存在，使用断点续传方式下载，已下载：" + downloadedLength + "字节");
 
                 httpConn.disconnect(); // 关闭之前的连接
                 // 重新创建URLConnection连接

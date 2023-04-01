@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="" />
+    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/utils/DownloadUtil/ContinuousDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/utils/DownloadUtil/ContinuousDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/utils/MiraiUtil/BotOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/utils/MiraiUtil/BotOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/logback.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +25,59 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/bungee">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cellsbot" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cellsbot" type="f1a62948:ProjectNode" />
+                <item name="bungee" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cellsbot" type="f1a62948:ProjectNode" />
+                <item name="bungee" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cellsbot" type="f1a62948:ProjectNode" />
+                <item name="bungee" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="shadow" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NmW8aSYdbIPfh7Tsfy8I6biNym" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -26,13 +87,104 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Volumes/passSSD/CodeProject/ZemBotProject/CellsBot/bungee/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15527344",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bungee/src/main/resources" />
+      <recent name="$PROJECT_DIR$/common/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.CellsBot:bungee [shadowJar]">
+    <configuration name="CellsBot [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CellsBot [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CellsBot:bungee [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bungee" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="cellbots-bungee.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/bungee/build/libs/cellbots-bungee.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="common-1.2-dev.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/common/build/libs/common-1.2-dev.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.CellsBot:bungee [shadowJar]" />
+        <item itemvalue="Gradle.CellsBot [shadowJar]" />
+        <item itemvalue="Gradle.CellsBot [clean]" />
+        <item itemvalue="JAR Application.cellbots-bungee.jar" />
+        <item itemvalue="JAR Application.common-1.2-dev.jar" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,8 +193,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680269578586</updated>
+      <workItem from="1680269580936" duration="5035000" />
+      <workItem from="1680274737544" duration="10200000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

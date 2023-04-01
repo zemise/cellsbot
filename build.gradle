@@ -1,19 +1,32 @@
 plugins {
-    id 'java'
+    id 'org.cadixdev.licenser' version '0.6.1' apply false
 }
 
-group 'com.zemise'
-version '1.0-SNAPSHOT'
+defaultTasks 'licenseFormat', 'build'
 
-repositories {
-    mavenCentral()
-}
+subprojects{
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    apply plugin: 'org.cadixdev.licenser'
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
+    group = 'com.zemise.cellsbot'
+    version = '1.2-dev'
 
-test {
-    useJUnitPlatform()
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    jar {
+        from '../LICENSE.txt'
+    }
+
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
 }
