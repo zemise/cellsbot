@@ -1,3 +1,4 @@
+
 plugins {
     id 'java-library'
     id 'org.jetbrains.kotlin.jvm'
@@ -5,24 +6,37 @@ plugins {
 
 archivesBaseName = 'cellsbot-common'
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    api(platform("net.mamoe:mirai-bom:2.15.0-M1"))
+    api("net.mamoe:mirai-core-api")     // 编译代码使用
+    runtimeOnly("net.mamoe:mirai-core") // 运行时使用
 
-    compileOnly 'net.mamoe:mirai-core-jvm:2.15.0-M1'
-
-    implementation 'org.projectlombok:lombok:1.18.26'
+    api 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
-    implementation 'ch.qos.logback:logback-classic:1.4.6'
-    implementation 'ch.qos.logback:logback-core:1.4.6'
+    api 'org.jetbrains:annotations:24.0.1'
+    api'com.google.guava:guava:31.1-jre'
+    api 'commons-lang:commons-lang:2.6'
+    // need 1.9
+    api 'org.yaml:snakeyaml:1.9'
+    api 'ch.qos.logback:logback-classic:1.4.6'
+    api 'ch.qos.logback:logback-core:1.4.6'
+
 }
 
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(16)
     }
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "16"
 }
 
 jar {
@@ -32,7 +46,8 @@ jar {
         // 而common模块也声明了一个module-info.java文件，因此出现了冲突。
         // duplicatesStrategy选项设置为'exclude'，表示当出现重复文件时，Gradle将自动忽略其中一个文件
         duplicatesStrategy = 'exclude'
+        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
+                'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
-

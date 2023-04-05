@@ -1,0 +1,56 @@
+#默认消息文件
+#作者：Zemise_
+#version: 1.0
+
+message-prefix: '&c[&fCellcraft&b] '
+server-name: 'Cellcraft'
+
+enable-message:
+  console: '&aCellbot已启用！'
+  server: '&aCellbot-s已启用！'
+  op-group: 'ZemBot 充能完毕'
+disable-message:
+  console: '&cCellbo已关闭！'
+  server: '&cCellbot-s已关闭！'
+  op-group: 'ZemBot 卸载完毕'
+
+bot-greetings:
+  - '今天晚上吃点什么？'
+  - '欢迎来到Cellcraft'
+  - 'ZemBot随时为你效劳'
+  - '群主只要女装，世界属于ZemBot'
+  - '我好饿，可以给我点吃的吗？'
+  - '最近有早睡早起吗？'
+  - '我觉得经常看CC官网是个好习惯'
+  - '听说不经常上线CellCraft的话，群主就会男装'
+  - '偷偷看看谁还在线'
+  - 'CC热爱和平'
+
+# 随机播放一条欢迎消息，不想随机，设置一条消息即可
+welcome-new-message:
+  player-group:
+    group:
+      - '这里是Cellbot，欢迎你加入Cellcraft！'
+      - '服务器版本: 1.19.2，进服可采用原版1.9至1.19.x'
+      - 'CC官网: https://zhumengmeng.pro'
+      - '祝你在CC服务器玩的开心！'
+    server:
+      - '&a有新人加入CellCraft啦，快在群里欢迎ta吧！'
+
+punishment-message:
+  - '我被服务器拉黑了'
+
+exit-player-group-message:
+  player-group: '玩家 {PLAYER} 掉出了这个世界！'
+  op-group: '{PLAYER} 已退出玩家群'
+  server: '{PLAYER} 退出了 {SERVERNAME}，有缘再会'
+
+disconnect_subServer_message: "请加Q群后，输入#绑定 ID \n将自动获取白名单 \nhttps://jq.qq.com/?_wv=1027&k=mjQTMGJl"
+
+good-morning-message:
+  - 'sd'
+  - 'sd'
+
+good-night-message:
+  - '现在是北京时间晚上11点整'
+  - '晚安，CC'

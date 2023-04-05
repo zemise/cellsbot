@@ -1,3 +1,4 @@
+/*
 apply plugin: 'application'
 apply plugin: 'java'
 
@@ -11,8 +12,20 @@ repositories {
 
 
 dependencies {
-    implementation project(':common')
+    implementation project(':mirai')
+//    compileOnly  'net.mamoe:mirai-core-jvm:2.15.0-M1'
 }
+
+configurations.all {
+    resolutionStrategy {
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == "net.mamoe" && details.requested.name == "mirai-core-utils") {
+                details.useTarget "jvmRuntimeElements-published"
+            }
+        }
+    }
+}
+
 
 jar {
     from {
@@ -23,3 +36,4 @@ jar {
         attributes 'Main-Class': 'com.zemise.cellsbot.bukkit.Test'
     }
 }
+*/

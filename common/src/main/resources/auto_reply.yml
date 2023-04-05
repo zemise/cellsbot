@@ -1,0 +1,16 @@
+#默认机器人自动回复文件
+#作者：Zemise_
+#version: 1.0
+
+#询问GPT时，问题符合关键词(英文请全小写)，则返回预设的回复消息
+GPT:
+  question-reply:
+    - "你是谁-我是CellCraft服务器的专属机器人，你可以输入#help查询我目前支持的指令"
+    - "cellcraft-恭喜你发现宝藏，居然提到了cellcraft，cellcraft服务器是由MC爱好者创立的，支持java版和基岩版互通，IP地址是cellcraft.top，基岩版需要填写默认的端口号：19132"
+    - "ip-我觉得你可能需要cellcraft服务器的IP地址，IP地址是cellcraft.top"
+    - "你好-你好呀，我是CellCraft服务器的专属机器人，很高兴见到你！"
+    - "hi-Hi，我是CellCraft服务器的专属机器人，很高兴见到你!"
+    - "cell-Cell是我的名字，其他我并不想多说"
+    - "有人吗-我在呢，你随时艾特我就行"
+    - "有人不-cellsbot在此，谁人喧哗"
+    - "有人吗-有人吗"

@@ -1,0 +1,215 @@
+#默认配置文件
+#作者：Zemise_
+#version: 4.0
+#===========================================================================
+# 主要配置：
+# 首次加载后必须填写好
+#===========================================================================
+# QQ机器人账号
+bot-account: 123
+# QQ机器人密码
+bot-password: '123456'
+# QQ机器人登陆协议，可选：ANDROID_PHONE, ANDROID_PAD, ANDROID_WATCH, IPAD, MACOS
+bot-login-device: 'ANDROID_WATCH'
+# 超级管理员QQ账号，可设置多个
+super-admin-account: [ 123, 456 ]
+# 玩家所在的QQ群
+player-group: 123
+# 管理员所在的QQ群
+op-group: 123
+
+# 是否扫码登陆
+loginByQR: true
+redirectBotLogToDirectory: false
+noNetworkLog: false
+noBotLog: false
+
+
+bot-command-prefix: '#'
+console-command-prefix: '/'
+
+message-head-format: '&f<&b{SENDER}&f> '
+
+# 绑定玩家ID和QQ号
+bind-id-and-qq:
+  # this function MUST be enabled
+  online-mode: true
+  # recommend enabling this in order for a better experience
+  whitelist: true
+  modify-namecard: true
+
+#===========================================================================
+# Q群和服务器通讯配置
+#===========================================================================
+# 当群名片不存在时,尝试获取昵称
+use-nick-if-namecard-null: true
+# 消息转发模式
+message-forward:
+  #Q群>>>服务器
+  group-to-server:
+    enable: true
+    #设置前缀为"all"则为全转发，设置为"prefix"，则为需要前缀才转发
+    mode: "all"
+    #具体聊天前缀(可设置多个，群聊天只有带有下面的前缀之一才会发送到服务器)
+    # "all"模式下前缀无效
+    prefix:
+      - "."
+      - "-"
+  #服务器>>>Q群
+  server-to-group:
+    enable: true
+    mode: "all"
+    prefix: "."
+
+# 黑名单
+# 无论上方如何设置，下方的黑名单如有匹配则不会进行任何操作（优先级最高）
+blacklist:
+  # 屏蔽的QQ，插件不会转发此处列出的QQ发出的消息
+  qq:
+    - 123
+    - 123
+  # 屏蔽的玩家名，插件不会转发此处列出的玩家的所有消息
+  player:
+    - Steve
+    - Alex
+  # 屏蔽词，插件不会转发包含下方列出的屏蔽词的消息
+  word:
+    - example
+    - words
+
+#屏蔽词触发次数，当达到这个次数，Q群内人员会被禁言300秒，服务器内会被撤回消息
+punishScoreLevel: 5
+
+#===========================================================================
+# bot消息配置
+#===========================================================================
+bot:
+  # QQ群消息广播到游戏内聊天的格式（可以使用样式代码）
+  # 变量：
+  # %groupname% - 群名称
+  # %groupid% - 群号
+  # %nick% - 发送者群名片
+  # %qq% - 发送者QQ号
+  # %message% - 消息内容
+  in-game-chat-format: "&6[%groupname%] &a%nick%&r: %message%"
+  # 是否发送玩家进服退服消息
+  send-player-join-quit-message: false
+  # 是否以图片的形式，发送玩家进服消息
+  send-player-join-quit-message-byImage: true
+  # 每次玩家进服，是否发送玩家IP所对应的地址到管理群
+  send_player_IP_message: false
+  # 进服消息
+  # 自带变量：
+  # %player% - 玩家显示昵称
+  player-join-message: "%player% 进入服务器"
+  # 玩家进服消息发送间隔，单位：秒
+  # 在此间隔内多次进入不会多次发送群消息
+  player-join-message-interval: 0
+  # 退服消息
+  # 自带变量：
+  # %player% - 玩家显示昵称
+  player-quit-message: "%player% 离开服务器"
+  # 玩家退服消息发送间隔，单位：秒
+  # 在此间隔内多次退出不会多次发送群消息
+  player-quit-message-interval: 0
+
+#===========================================================================
+# 其他功能配置
+#===========================================================================
+#ChatGPT
+apiKey: "sk-xxxx"
+#GPT connectTimeout(SECONDS)
+connectTimeout: 20
+#GPT readTimeout(SECONDS)
+readTimeout: 100
+#GPT writeTimeout(SECONDS)
+writeTimeout: 100
+
+# 时区设置，默认北京时间
+TimeZone: 'GMT+8:00'
+# 是否开启LuckPerms的前后缀模式，转发服务器内玩家消息时，其名字包括前后缀
+# 此功能需要安装LuckPerms前置
+LuckPerms: false
+
+# 是否开启播报群消息撤回信息
+onRecallMessage:
+  enable: false
+  # 需要播报撤回消息的群
+  groups:
+    - 123456
+    - 234567
+
+# 是否开启插件白名单系统
+# 这是离线子服白名单，是本插件内置，不是MineCraft的白名单
+whitelist:
+  enable: false
+  # 启用白名单的服务器，启用后不在插件白名单内的玩家无法连接对应子服
+  servers:
+    - Pure01
+    - test01
+    - test02
+
+# 隐身玩家
+# Q群内list指令将不会显示下列玩家
+vanishlist:
+  player:
+    - Zemise_
+    - kira
+
+# use Mysql or SQLite
+use-mysql: false
+mysql-host: "127.0.0.1"
+mysql-port: "3306"
+mysql-database: "mysql"
+mysql-username: "root"
+mysql-password: "123456"
+
+# 和风天气API密钥
+QWeather-APIKey: '123'
+
+# percent预留配置，暂时不管
+# bot may seldom speak something written at "messages.yml" - "bot-greetings"
+# set this number to decide the possibility, set to 0 to disable
+bot-speak-possibility: 5
+
+# 消息长度限制，暂时不管
+message-length-limit:
+  enable: true
+  ignore-ops: true
+  maximum-length: 60  # chars
+
+#===========================================================================
+# 头像模式配置(非必需不建议改动)
+#===========================================================================
+# crafatar_url: the crafatar url from which Phenyl will get the avatars.
+# In case your server is using custom yggdrasil authentication, fork crafatar and modify it to provide your own avatar service.
+# 这里网址后缀能支持uuid就行，可以替换网址，目前这个网址加上uuid是获得头像，可以自定义一个支持皮肤的
+crafatar_url: "https://minotar.net/avatar/"
+# avatar_size: the size of avatar.
+avatar_size: 40
+# username_avatar_margin: the margin between avatar and username.
+username_avatar_margin: 40
+# message_min_width: minimum width of the image message.
+# If you find the username not been fully shown, turn this a little bigger.
+message_min_width: 230
+# message_max_width: maximum width of the image message.
+message_max_width: 340
+# overall_padding: the overall padding.
+# This is the padding surrounding avatar and message.
+overall_padding: 25
+# username_offset: how much the username goes down.
+username_offset: 10
+# message_padding: how much the message content goes down.
+message_offset: 15
+# username_size: font size of the username.
+username_size: 30
+# message_size: font size of the message.
+message_size: 30
+# font: the font you want to use.
+# Please make sure your device has installed the required font already.
+font: "Sarasa Mono SC"
+
+
+
+
+

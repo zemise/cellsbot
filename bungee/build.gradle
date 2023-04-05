@@ -1,5 +1,7 @@
-apply plugin: 'application'
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
 
 archivesBaseName = 'cellsbot-bungee'
 
@@ -12,16 +14,20 @@ repositories {
 
 dependencies {
     implementation project(':common')
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
     compileOnly 'net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT'
 }
 
 jar {
     from {
         duplicatesStrategy = 'exclude'
+        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
+                'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
     manifest {
-        attributes 'Main-Class': 'com.zemise.cellsbot.bungee.Test'
+        attributes 'Main-Class': 'com.zemise.cellsbot.bungee.Main'
+
     }
 }
-

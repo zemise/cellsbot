@@ -6,7 +6,7 @@ CellsBot is an MC-QQ bot plugin for Minecraft servers.
 CellsBot uses Gradle to handle dependencies & building.
 
 #### Requirements
-* Java 17 JDK or newer
+* Java 16 JDK or newer
 * Git
 
 #### Compiling from source

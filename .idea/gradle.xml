@@ -12,10 +12,10 @@
             <option value="$PROJECT_DIR$/bukkit" />
             <option value="$PROJECT_DIR$/bungee" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/mirai" />
           </set>
         </option>
       </GradleProjectSettings>
     </option>
-    <option name="offlineMode" value="true" />
   </component>
 </project>

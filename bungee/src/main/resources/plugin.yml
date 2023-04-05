@@ -1,0 +1,4 @@
+name: CellsBot
+main: com.zemise.cellsbot.bungee.Main
+version: "2.0.0"
+author: zemise_
