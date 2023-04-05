@@ -249,7 +249,6 @@ public final class Color implements ConfigurationSerializable {
      * @param colors The DyeColors to dye with
      * @return A new color with the changed rgb components
      */
-    // TODO: Javadoc what this method does, not what it mimics. API != Implementation
     public Color mixDyes(DyeColor... colors) {
         Validate.noNullElements(colors, "Colors cannot be null");
 
@@ -268,7 +267,6 @@ public final class Color implements ConfigurationSerializable {
      * @param colors The colors to dye with
      * @return A new color with the changed rgb components
      */
-    // TODO: Javadoc what this method does, not what it mimics. API != Implementation
     public Color mixColors(Color... colors) {
         Validate.noNullElements(colors, "Colors cannot be null");
 

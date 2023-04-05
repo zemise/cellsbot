@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="重构项目基本结构，实现各模块基本编译">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="1. yml File read and write&#10;2. Event listening&#10;3. mirai login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/com/zemise/cellsbot/bukkit/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/com/zemise/cellsbot/bukkit/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/com/zemise/cellsbot/bungee/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/src/main/resources/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/utils/DownloadUtil/ContinuousDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/downloadUtil/ContinuousDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/utils/MiraiUtil/BotOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/miraiUtil/BotOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/Color.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +229,7 @@
       <workItem from="1680426268826" duration="14087000" />
       <workItem from="1680577676626" duration="133000" />
       <workItem from="1680591477877" duration="764000" />
-      <workItem from="1680659071761" duration="15071000" />
+      <workItem from="1680659071761" duration="15967000" />
     </task>
     <task id="LOCAL-00001" summary="log配置">
       <created>1680336724098</created>
@@ -266,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680371124697</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. yml File read and write&#10;2. Event listening&#10;3. mirai login">
+      <created>1680686185123</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680686185123</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +279,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="log配置" />
     <MESSAGE value="重构项目基本结构，实现各模块基本编译" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构项目基本结构，实现各模块基本编译" />
+    <MESSAGE value="1. yml File read and write&#10;2. Event listening&#10;3. mirai login" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. yml File read and write&#10;2. Event listening&#10;3. mirai login" />
   </component>
 </project>

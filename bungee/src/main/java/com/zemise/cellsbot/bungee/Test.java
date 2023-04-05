@@ -1,7 +1,5 @@
 package com.zemise.cellsbot.bungee;
 
-
-
 import com.zemise.cellsbot.common.util.downloadUtil.ContinuousDownload;
 
 import java.io.IOException;
