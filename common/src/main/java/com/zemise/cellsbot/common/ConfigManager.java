@@ -45,7 +45,7 @@ public class ConfigManager {
         setPluginDirectory(directory);
 
         //判断是否有相应的配置文件夹，如果无，生成plugin文件夹
-        if (directory.exists()) directory.mkdirs();
+        if (!directory.exists()) directory.mkdirs();
 
         //生成默认的配置文件，文件不存在时,就生成；存在同名文件，不进行覆盖
         for (String s : config_files) {

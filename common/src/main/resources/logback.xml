@@ -5,6 +5,9 @@
 	<property name="APP_NAME" value="cellsbot" />
 	<property name="MaxHistory" value="365" />
 
+	<!-- 关闭Hikari日志记录 -->
+	<logger name="com.zaxxer.hikari" level="OFF" />
+
 	<!-- 控制台输出 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<withJansi>false</withJansi>

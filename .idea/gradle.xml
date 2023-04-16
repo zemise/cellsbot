@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/alone" />
             <option value="$PROJECT_DIR$/bukkit" />
             <option value="$PROJECT_DIR$/bungee" />
             <option value="$PROJECT_DIR$/common" />

@@ -2,6 +2,7 @@ package com.zemise.cellsbot.common.util.miraiUtil;
 
 import com.zemise.cellsbot.common.ConfigManager;
 import com.zemise.cellsbot.common.configuration.Configuration;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
@@ -11,7 +12,9 @@ import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.utils.BotConfiguration;
 import net.mamoe.mirai.utils.DeviceInfo;
 
+
 import java.io.File;
+import java.util.Map;
 
 /**
  * @Author Zemise_
@@ -20,7 +23,16 @@ import java.io.File;
  */
 @Slf4j
 public class BotOperator {
+    @Getter
     private static Bot bot;
+
+    //public static void update() {
+    //    FixProtocolVersion.update();
+    //}
+    // 获取协议版本信息 你可以用这个来检查update是否正常工作
+    //public static Map<MiraiProtocol, String> info() {
+    //    return FixProtocolVersion.info();
+    //}
 
     public static void login(Long botAccount, String botPassword) {
 
@@ -67,8 +79,10 @@ public class BotOperator {
                     if (config.getBoolean("noBotLog")) {
                         noBotLog();
                     }
+
                     //FixProtocolVersion.update();
                     setProtocol(MiraiProtocol.valueOf(config.getString("bot-login-device")));
+
                     setCacheDir(new File("cache"));
                     fileBasedDeviceInfo();
                     File deviceFile = new File(getWorkingDir(), "device.json");

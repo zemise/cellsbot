@@ -3,6 +3,6 @@ include (
         'bungee',
         'common',
         'mirai',
-        'bukkit')
-include 'mirai'
+        'bukkit',
+        'alone')
 

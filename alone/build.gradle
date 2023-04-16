@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+archivesBaseName = 'cellsbot-alone'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs '/Volumes/passSSD/CodeProject/BotProject/'
+    }
+}
+
+
+dependencies {
+    implementation project(':common')
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+}
+
+jar {
+    from {
+        duplicatesStrategy = 'exclude'
+        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
+                'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    manifest {
+        attributes 'Main-Class': 'com.zemise.cellsbot.Main'
+
+    }
+}
