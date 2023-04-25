@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+archivesBaseName = 'cellsbot-plugins'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly project(':plugins:screenshot')
+}
+
+test {
+    useJUnitPlatform()
+}

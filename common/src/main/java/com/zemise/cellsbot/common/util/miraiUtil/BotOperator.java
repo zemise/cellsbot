@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
 import net.mamoe.mirai.auth.BotAuthorization;
+import net.mamoe.mirai.contact.Group;
 import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.utils.BotConfiguration;
@@ -14,7 +15,8 @@ import net.mamoe.mirai.utils.DeviceInfo;
 
 
 import java.io.File;
-import java.util.Map;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @Author Zemise_
@@ -26,14 +28,6 @@ public class BotOperator {
     @Getter
     private static Bot bot;
 
-    //public static void update() {
-    //    FixProtocolVersion.update();
-    //}
-    // 获取协议版本信息 你可以用这个来检查update是否正常工作
-    //public static Map<MiraiProtocol, String> info() {
-    //    return FixProtocolVersion.info();
-    //}
-
     public static void login(Long botAccount, String botPassword) {
 
         Configuration config = ConfigManager.getConfig();
@@ -44,7 +38,7 @@ public class BotOperator {
         boolean loginByQR = config.getBoolean("loginByQR");
         File workingDir = new File(ConfigManager.pluginDirectory, "bot");
 
-        if(!workingDir.exists()) workingDir.mkdirs();
+        if (!workingDir.exists()) workingDir.mkdirs();
 
 
         BotFactory.BotConfigurationLambda botConfigurationLambda = botConfiguration -> {
@@ -80,7 +74,6 @@ public class BotOperator {
                         noBotLog();
                     }
 
-                    //FixProtocolVersion.update();
                     setProtocol(MiraiProtocol.valueOf(config.getString("bot-login-device")));
 
                     setCacheDir(new File("cache"));
@@ -94,23 +87,30 @@ public class BotOperator {
         bot.login();
         Thread.currentThread().setContextClassLoader(loader);
     }
-    public static void sendGroupMessage(Long groupID, MessageChain message) {
-        try {
-            bot.getGroup(groupID).sendMessage(message);
-        } catch (NullPointerException e) {
-            log.info("QQ账户正在登陆中，登陆期间的消息将不会转发");
-        } catch (IllegalStateException e) {
-            log.info("发送消息失败，QQ账户可能被风控，请及时处理");
+
+
+    public static void sendGroupMessage(List<Long> groupIDs, Object message) {
+        for (Long groupID : groupIDs) {
+            try {
+                Group group = bot.getGroup(groupID);
+                if (message instanceof MessageChain) {
+                    group.sendMessage((MessageChain) message);
+                } else if (message instanceof String) {
+                    group.sendMessage((String) message);
+                } else {
+                    log.error("Invalid message type: {}", message.getClass().getName());
+                }
+            } catch (NullPointerException e) {
+                log.error("Failed to send message to group {} - group is null: {}", groupID, e.getMessage());
+            } catch (IllegalStateException e) {
+                log.error("Failed to send message to group {} - account may be blocked: {}", groupID, e.getMessage());
+            } catch (Exception e) {
+                log.error("Failed to send message to group {}: {}", groupID, e.getMessage());
+            }
         }
     }
 
-    public static void sendGroupMessage(Long groupID, String message) {
-        try {
-            bot.getGroup(groupID).sendMessage(message);
-        } catch (NullPointerException e) {
-            log.info("QQ账户正在登陆中，登陆期间的消息将不会转发");
-        } catch (IllegalStateException e) {
-            log.info("发送消息失败，QQ账户可能被风控，请及时处理");
-        }
+    public static void sendGroupMessage(Long groupID, Object message) {
+        sendGroupMessage(Collections.singletonList(groupID), message);
     }
 }

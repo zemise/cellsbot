@@ -1,8 +1,8 @@
 rootProject.name = 'cellsbot'
-include (
+include(
         'bungee',
         'common',
-        'mirai',
         'bukkit',
-        'alone')
+        'alone',
+)
 

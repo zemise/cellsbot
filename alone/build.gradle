@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     implementation project(':common')
+
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
 }

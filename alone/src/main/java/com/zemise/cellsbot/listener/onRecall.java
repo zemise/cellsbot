@@ -3,8 +3,6 @@ package com.zemise.cellsbot.listener;
 import com.zemise.cellsbot.common.util.miraiUtil.BotOperator;
 import lombok.extern.slf4j.Slf4j;
 import net.mamoe.mirai.Bot;
-import net.mamoe.mirai.contact.Group;
-import net.mamoe.mirai.contact.Member;
 import net.mamoe.mirai.contact.MemberPermission;
 import net.mamoe.mirai.event.EventHandler;
 import net.mamoe.mirai.event.SimpleListenerHost;
@@ -16,7 +14,6 @@ import net.mamoe.mirai.message.data.MessageChainBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -61,14 +58,6 @@ public class onRecall extends SimpleListenerHost {
 
     @EventHandler
     public void recordMessage(GroupMessageEvent event) {
-
-        Group group = event.getGroup();
-        Member sender = event.getSender();
-        System.out.println(group);
-        System.out.println(sender);
-
-        System.out.println("测试008");
-
         MessageChain messageChain = event.getMessage();
         String messageIds = getMessageIds(event.getMessage());
 
@@ -110,21 +99,12 @@ public class onRecall extends SimpleListenerHost {
 
     @EventHandler
     public void onRecallMessage(MessageRecallEvent.GroupRecall event) {
-        log.info("test");
-        System.out.println("测试000");
         long groupId = event.getGroup().getId();
-
-        //boolean recallEnable = config.getBoolean("onRecallMessage.enable");
-        //List<Long> onRecallGroupList = config.getLongList("onRecallMessage.groups");
-
-        //if(!recallEnable | !onRecallGroupList.contains(groupId)) return;
 
         long operatorId = event.getOperator().getId();
         Bot bot = BotOperator.getBot();
-        log.info("测试001");
         MemberPermission permission = bot.getGroup(event.getGroup().getId()).get(operatorId).getPermission();
         int level = permission.getLevel();
-        log.info("测试002");
 
         if (level > 0) {
             String message = "[报告]：有人撤回消息\n\n[账号]：%s\n[内容]：%s";

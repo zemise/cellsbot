@@ -2,6 +2,7 @@ package com.zemise.cellsbot;
 
 import com.zemise.cellsbot.common.ConfigManager;
 import com.zemise.cellsbot.common.configuration.Configuration;
+import com.zemise.cellsbot.common.plugin.QGroupMessageEvent;
 import com.zemise.cellsbot.common.util.miraiUtil.BotOperator;
 import com.zemise.cellsbot.listener.onRecall;
 import com.zemise.cellsbot.listener.onResetPassword;
@@ -38,6 +39,7 @@ public class Main {
                 BotOperator.login(config.getLong("bot-account"), config.getString("bot-password"));
                 BotOperator.getBot().getEventChannel().registerListenerHost(new onRecall());
                 BotOperator.getBot().getEventChannel().registerListenerHost(new onResetPassword());
+                BotOperator.getBot().getEventChannel().registerListenerHost(new QGroupMessageEvent());
             } catch (Exception e) {
                 log.info("机器人登陆错误", e);
             }
