@@ -4,7 +4,6 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
@@ -13,6 +12,7 @@
             <option value="$PROJECT_DIR$/bukkit" />
             <option value="$PROJECT_DIR$/bungee" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/waterfall" />
           </set>
         </option>
       </GradleProjectSettings>

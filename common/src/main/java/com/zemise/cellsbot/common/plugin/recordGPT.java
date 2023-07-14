@@ -50,22 +50,20 @@ public class recordGPT{
         map.put(senderID, response);
     }
 
-    public static void onGPT(GroupMessageEvent e, Long groupId, Long senderID, String askMessage) {
+    public static String onGPT(GroupMessageEvent e, Long groupId, Long senderID, String askMessage) {
         Collection<String> keyWords = new ArrayList<>();
         keyWords.add("reset");
         keyWords.add("忘记");
 
         if (MiraiMessageUtil.startWithKeywords(e, keyWords)) {
             map.remove(senderID);
-            BotOperator.sendGroupMessage(groupId, MiraiMessageUtil.quoteReply(e, "已重置与您的对话"));
-            return;
+            return " 已重置与您的对话";
         }
         // 匹配预设问答
         String s = GPT.containKey(askMessage);
         // 如果包含预设问答的问题内容，则发送预设的回答
         if (!s.equals(askMessage)) {
-            BotOperator.sendGroupMessage(groupId, MiraiMessageUtil.quoteReply(e, s));
-            return;
+            return s;
         }
 
         String finalAsk = "";
@@ -79,8 +77,7 @@ public class recordGPT{
             }
 
             if (mapTime.get(senderID) > ConfigManager.getConfig().getInt("maxAsk")){
-                BotOperator.sendGroupMessage(groupId,MiraiMessageUtil.quoteReply(e, " 今日您询问的次数已达上限"));
-                return;
+                return "今日您询问的次数已达上限";
             }
 
             mapTime.put(senderID, mapTime.get(senderID) + 1);
@@ -100,6 +97,9 @@ public class recordGPT{
             recordQuestion(senderID, map.get(senderID) + conversation);
         }
 
-        BotOperator.sendGroupMessage(groupId, MiraiMessageUtil.quoteReply(e, response));
+        return response;
+
     }
+
+
 }

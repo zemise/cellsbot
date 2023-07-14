@@ -94,8 +94,7 @@ public enum DyeColor {
      * Gets the associated (wool) data value representing this color.
      *
      * @return A byte containing the (wool) data value of this color
-     * @deprecated The name is misleading. It would imply {@link
-     *     Material#INK_SACK} but uses {@link Material#WOOL}
+     * @deprecated The name is misleading.
      * @see #getWoolData()
      * @see #getDyeData()
      */
@@ -152,8 +151,6 @@ public enum DyeColor {
      * @param data (wool) data value to fetch
      * @return The {@link DyeColor} representing the given value, or null if
      *     it doesn't exist
-     * @deprecated The name is misleading. It would imply {@link
-     *     Material#INK_SACK} but uses {@link Material#WOOL}
      * @see #getByDyeData(byte)
      * @see #getByWoolData(byte)
      */

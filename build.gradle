@@ -15,17 +15,29 @@ allprojects {
 
     repositories {
         mavenCentral()
-    }
-
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
-        sourceCompatibility = JavaVersion.VERSION_16
-        targetCompatibility = JavaVersion.VERSION_16
-    }
-
-    tasks.withType(Jar) {
-        manifest {
-            attributes 'Main-Class': 'com.zemise.cellsbot.bungee.Test'
+        // maybe need
+        /*flatDir {
+            dirs '/Volumes/passSSD/CodeProject/BotProject/'
+        }*/
+        // waterfall need
+        maven {
+            name = "papermc-repo"
+            url = "https://repo.papermc.io/repository/maven-public/"
         }
+
+        // md-5 bungee need
+        maven { url("https://oss.sonatype.org/content/repositories/snapshots/") }
+    }
+}
+
+//    tasks.withType(JavaCompile) {
+//        options.encoding = 'UTF-8'
+//        sourceCompatibility = JavaVersion.VERSION_17
+//        targetCompatibility = JavaVersion.VERSION_17
+//    }
+
+tasks.withType(Jar).configureEach {
+    manifest {
+        attributes 'Main-Class': 'com.zemise.cellsbot.bungee.Test'
     }
 }

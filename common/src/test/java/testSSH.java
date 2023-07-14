@@ -18,7 +18,7 @@ public class testSSH {
         String localFilePath = "localhost";
 
         try {
-            SshDownload.downloadFile(remoteHost,port,username,password,remoteFilePath,localFilePath);
+            SshDownload.downloadFile(remoteHost, port, username, password, remoteFilePath, localFilePath);
             System.out.println("文件已下载到本地路径：" + localFilePath);
         } catch (SshDownload.DownloadException e) {
             System.out.println(e);

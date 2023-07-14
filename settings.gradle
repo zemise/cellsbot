@@ -4,5 +4,6 @@ include(
         'common',
         'bukkit',
         'alone',
+        'waterfall',
 )
 

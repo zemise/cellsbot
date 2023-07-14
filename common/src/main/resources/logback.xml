@@ -7,6 +7,8 @@
 
 	<!-- 关闭Hikari日志记录 -->
 	<logger name="com.zaxxer.hikari" level="OFF" />
+	<!-- 关闭seleniumhq日志记录  暂时无效-->
+	<logger name="org.seleniumhq.seleniumhq" level="OFF" />
 
 	<!-- 控制台输出 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

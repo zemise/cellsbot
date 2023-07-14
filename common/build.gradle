@@ -5,16 +5,8 @@ plugins {
 
 archivesBaseName = 'cellsbot-common'
 
-repositories {
-    mavenCentral()
-    // 本地
-    /*flatDir {
-        dirs '/Volumes/passSSD/CodeProject/BotProject/'
-    }*/
-}
-
 dependencies {
-    api(platform("net.mamoe:mirai-bom:2.15.0-M1"))
+    api(platform("net.mamoe:mirai-bom:2.15.0"))
     api("net.mamoe:mirai-core-api")     // 编译代码使用
     runtimeOnly("net.mamoe:mirai-core") // 运行时使用
 
@@ -25,44 +17,52 @@ dependencies {
     api 'com.google.guava:guava:31.1-jre'
     api 'commons-lang:commons-lang:2.6'
     // need 1.9
-    api 'org.yaml:snakeyaml:1.9'
+//    api 'org.yaml:snakeyaml:1.9'
+    implementation 'org.yaml:snakeyaml:1.9'
     api 'ch.qos.logback:logback-classic:1.4.6'
     api 'ch.qos.logback:logback-core:1.4.6'
 
     // mysql
-    api 'com.jcraft:jsch:0.1.55'
+    api 'com.jcraft:jsch:0.1.54'
     api 'mysql:mysql-connector-java:8.0.32'
     api 'com.zaxxer:HikariCP:4.0.3'
 
+    api 'com.google.code.gson:gson:2.10'
+
     api 'com.squareup.okhttp3:okhttp:4.11.0'
     api 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+
 
     implementation 'com.liferay:javax.xml.bind:2.3.0.LIFERAY-PATCHED-2'
 
     implementation 'org.seleniumhq.selenium:selenium-java:4.9.0'
     implementation 'commons-io:commons-io:2.11.0'
+
+    api 'io.github.zemise:Voice-Synthesis:1.0.0'
+
+    api 'dnsjava:dnsjava:3.5.1'
 }
 
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(16)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = "16"
+    kotlinOptions.jvmTarget = "1.8"
 }
 
-jar {
-    from {
-        // common模块中包含了重复的module-info.class文件，需要设置一个解决重复文件的策略。
-        // 可能是因为Mirai库自身包含了一个module-info.class文件。
-        // 而common模块也声明了一个module-info.java文件，因此出现了冲突。
-        // duplicatesStrategy选项设置为'exclude'，表示当出现重复文件时，Gradle将自动忽略其中一个文件
-        duplicatesStrategy = 'exclude'
-        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
-                'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
+//jar {
+//    from {
+//        // common模块中包含了重复的module-info.class文件，需要设置一个解决重复文件的策略。
+//        // 可能是因为Mirai库自身包含了一个module-info.class文件。
+//        // 而common模块也声明了一个module-info.java文件，因此出现了冲突。
+//        // duplicatesStrategy选项设置为'exclude'，表示当出现重复文件时，Gradle将自动忽略其中一个文件
+//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+//        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
+//                'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
+//        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
+//}

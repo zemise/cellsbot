@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="mysql and more utils">
+    <list default="true" id="0356d5fa-d833-40bd-bb19-90eb1cc9ca57" name="Changes" comment="add web screenshot">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/screenshot/seleshot/ScreenShotMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4abe153d-53ca-44b8-9a48-59f7fbed56f5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alone/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/alone/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/connectMysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/databaseUtil/connectMysql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/listener/onRecall.java" beforeDir="false" afterPath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/listener/onRecall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/listener/onResetPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot/listener/onResetPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bungee/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/common/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/databaseUtil/SQLCommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/databaseUtil/SQLCommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/miraiUtil/BotOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/miraiUtil/BotOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/recordGPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/recordGPT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/screenshot/seleshot/ScreenShot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/DyeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/DyeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/java/testSSH.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/testSSH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/java/testScreenShot.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +77,20 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="cellsbot" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+                <item name="common" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cellsbot" type="f1a62948:ProjectNode" />
+                <item name="common" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cellsbot" type="f1a62948:ProjectNode" />
+                <item name="common" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
               </path>
             </expand>
             <select />
@@ -85,12 +103,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/security/NoSuchAlgorithmException.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,33 +125,45 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;jdk.selected.com.intellij.ui.dsl.builder.impl.RowImpl.sdk&quot;: &quot;20&quot;,
     &quot;last_directory_selection&quot;: &quot;/Volumes/passSSD/CodeProject/ZemBotProject/CellsBot/alone/src/main/java/com/zemise/cellsbot/loops&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/passSSD/CodeProject/ZemBotProject/CellsBot/common/src/main/java/com/zemise/cellsbot/common/plugin/chatgpt&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Volumes/passSSD 1/CodeProject/ZemBotProject/CellsBot/waterfall/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15527344&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;7662f3e0181fe69766aa0045c74632e2&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.star.easydoc.view.settings.javadoc.template.ClassSettingsConfigurable&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7662f3e0181fe69766aa0045c74632e2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;
+    ],
+    &quot;jdk.preference.com.intellij.ui.dsl.builder.impl.RowImpl.sdk&quot;: [
+      &quot;17=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home&quot;,
+      &quot;20=/Users/zhaowang/.sdkman/candidates/java/20.0.1-oracle&quot;
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/chatgpt" />
-      <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/screenshot" />
-      <recent name="$PROJECT_DIR$/alone/src/main/java/com/zemise/cellsbot" />
-      <recent name="$PROJECT_DIR$/bungee/src/main/resources" />
-      <recent name="$PROJECT_DIR$/common/src/main/resources" />
+      <recent name="$PROJECT_DIR$/waterfall/src/main/resources" />
+      <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/mcping/bc" />
+      <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/mcping" />
+      <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/mcping002" />
+      <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/plugin/mcping02" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/common/src/main/java/com/zemise/cellsbot/common/util/miraiUtil" />
@@ -137,21 +171,27 @@
       <recent name="$PROJECT_DIR$/common/loader-utils" />
       <recent name="$PROJECT_DIR$/common/loader-utils/src" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zemise.cellsbot.common.plugin.screenshot.testTemp" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zemise.cellsbot.common.plugin.mcping.bc" />
+      <recent name="com.zemise.cellsbot.common.plugin.screenshot.seleshot" />
       <recent name="com.zemise.cellsbot.common.util.miraiUtil" />
       <recent name="" />
       <recent name="com.zemise.cellsbot.common.util.GptUtil" />
-      <recent name="com.zemise.cellsbot.common.plugin" />
-      <recent name="com.zemise.cellsbot" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.CellsBot [clean]">
-    <configuration name="GPT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zemise.cellsbot.common.plugin.GPT" />
+    <configuration name="testAu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zemise.cellsbot.common.plugin.word2voice.test.testAu" />
       <module name="cellsbot.common.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zemise.cellsbot.common.plugin.*" />
+          <option name="PATTERN" value="com.zemise.cellsbot.common.plugin.word2voice.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,25 +199,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zemise.cellsbot.Main" />
-      <module name="cellsbot.alone.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zemise.cellsbot.common.util.databaseUtil.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QqLoginSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zemise.cellsbot.common.util.miraiUtil.QqLoginSolver" />
+    <configuration name="testMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zemise.cellsbot.common.Atest.testMain" />
       <module name="cellsbot.common.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zemise.cellsbot.common.util.miraiUtil.*" />
+          <option name="PATTERN" value="com.zemise.cellsbot.common.Atest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -185,12 +212,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testScreenShot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="testScreenShot" />
-      <module name="cellsbot.common.test" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="CellsBot [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
     </configuration>
     <configuration name="CellsBot [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -211,15 +253,36 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="CellsBot [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.CellsBot [clean]" />
-        <item itemvalue="Application.GPT" />
-        <item itemvalue="Application.testScreenShot" />
-        <item itemvalue="Application.QqLoginSolver" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.CellsBot [testClasses]" />
+        <item itemvalue="Gradle.CellsBot [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +354,65 @@
       <workItem from="1682405407736" duration="432000" />
       <workItem from="1682405845464" duration="3727000" />
       <workItem from="1682416744666" duration="8415000" />
-      <workItem from="1682427200289" duration="5683000" />
+      <workItem from="1682427200289" duration="6005000" />
+      <workItem from="1682433304791" duration="1571000" />
+      <workItem from="1682519853177" duration="881000" />
+      <workItem from="1682520834383" duration="756000" />
+      <workItem from="1682554744815" duration="4624000" />
+      <workItem from="1682565930720" duration="851000" />
+      <workItem from="1682567157401" duration="15000" />
+      <workItem from="1682568415202" duration="703000" />
+      <workItem from="1682569441954" duration="7920000" />
+      <workItem from="1682578118899" duration="3081000" />
+      <workItem from="1682582194945" duration="1329000" />
+      <workItem from="1682584351352" duration="4672000" />
+      <workItem from="1682589768487" duration="93000" />
+      <workItem from="1682589865424" duration="19352000" />
+      <workItem from="1682676468284" duration="803000" />
+      <workItem from="1683272615020" duration="667000" />
+      <workItem from="1683273287272" duration="2805000" />
+      <workItem from="1683727647151" duration="435000" />
+      <workItem from="1683796892036" duration="168000" />
+      <workItem from="1684045181871" duration="12376000" />
+      <workItem from="1684073619374" duration="94000" />
+      <workItem from="1684073715838" duration="2780000" />
+      <workItem from="1684378922535" duration="878000" />
+      <workItem from="1684918329167" duration="937000" />
+      <workItem from="1684919276144" duration="2595000" />
+      <workItem from="1684927705143" duration="21118000" />
+      <workItem from="1684998511132" duration="633000" />
+      <workItem from="1685003371210" duration="3167000" />
+      <workItem from="1685028622207" duration="308000" />
+      <workItem from="1685030394441" duration="625000" />
+      <workItem from="1685033097811" duration="178000" />
+      <workItem from="1685064290078" duration="7501000" />
+      <workItem from="1685077614960" duration="1250000" />
+      <workItem from="1685085643027" duration="49000" />
+      <workItem from="1685086768778" duration="2149000" />
+      <workItem from="1685457852334" duration="1248000" />
+      <workItem from="1685608797227" duration="1561000" />
+      <workItem from="1685674176078" duration="8000" />
+      <workItem from="1686232672674" duration="173000" />
+      <workItem from="1686232859375" duration="383000" />
+      <workItem from="1686233254949" duration="6842000" />
+      <workItem from="1686269466141" duration="651000" />
+      <workItem from="1686270126156" duration="234000" />
+      <workItem from="1686271018246" duration="328000" />
+      <workItem from="1686271596306" duration="608000" />
+      <workItem from="1686272240137" duration="559000" />
+      <workItem from="1686272817821" duration="1158000" />
+      <workItem from="1686274010005" duration="783000" />
+      <workItem from="1686274800011" duration="2763000" />
+      <workItem from="1686277792267" duration="3253000" />
+      <workItem from="1686320874264" duration="3137000" />
+      <workItem from="1688373192926" duration="763000" />
+      <workItem from="1688478533112" duration="273000" />
+      <workItem from="1688871008345" duration="936000" />
+      <workItem from="1689264135096" duration="1466000" />
+      <workItem from="1689265610838" duration="968000" />
+      <workItem from="1689266585563" duration="200000" />
+      <workItem from="1689266794911" duration="6401000" />
+      <workItem from="1689273768098" duration="1095000" />
     </task>
     <task id="LOCAL-00001" summary="log配置">
       <created>1680336724098</created>
@@ -335,7 +456,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681634139950</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add web screenshot">
+      <created>1682433098953</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682433098953</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add web screenshot">
+      <created>1682433240093</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682433240093</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +492,8 @@
     <MESSAGE value="重构项目基本结构，实现各模块基本编译" />
     <MESSAGE value="1. yml File read and write&#10;2. Event listening&#10;3. mirai login" />
     <MESSAGE value="mysql and more utils" />
-    <option name="LAST_COMMIT_MESSAGE" value="mysql and more utils" />
+    <MESSAGE value="add web screenshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="add web screenshot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,5 +505,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

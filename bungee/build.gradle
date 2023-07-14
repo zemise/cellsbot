@@ -5,13 +5,6 @@ plugins {
 
 archivesBaseName = 'cellsbot-bungee'
 
-repositories {
-    mavenCentral()
-    // md-5 bungee 所需要
-    maven { url("https://oss.sonatype.org/content/repositories/snapshots/") }
-}
-
-
 dependencies {
     implementation project(':common')
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
@@ -21,7 +14,7 @@ dependencies {
 
 jar {
     from {
-        duplicatesStrategy = 'exclude'
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
                 'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
