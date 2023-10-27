@@ -1,0 +1,26 @@
+# spring
+spring:
+  profiles:
+    active: dev
+  # dataSource
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/database?
+      useUnicode=true&
+      characterEncoding=utf-8&
+      useSSL=true&
+      serverTimezone=Asia/Shanghai
+    # serverTimezone=UTC
+    # 此处因为插入数据库的时间有差异，所以强制了时区，暂时如此处理
+    username: username
+    password: password
+  # jpa
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        format_sql: true
+        # fix HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+        dialect: org.hibernate.dialect.MySQLDialect

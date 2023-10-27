@@ -39,7 +39,7 @@ public class helpAsk {
                 .append(AtAll.INSTANCE)  //这里要注意，如果bot不是群管理员身份，这条消息发不出来
                 .append("\n玩家群有人寻求管理帮助啦：\n")
                 .append(MC_id)
-                .append(" (QQ:")
+                .append(" (qq:")
                 .append(senderID.toString())
                 .append(")：\n")
                 .append(helpMsg)

@@ -1,6 +1,11 @@
 plugins {
     id 'java'
 //    id 'org.jetbrains.kotlin.jvm'
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+    // docker
+    id 'com.palantir.docker' version '0.35.0'
+    id 'com.palantir.docker-run' version '0.35.0'
 }
 
 archivesBaseName = 'cellsbot-alone'
@@ -13,11 +18,8 @@ repositories {
 }
 
 
-dependencies {
-    implementation project(':common')
-
-    annotationProcessor 'org.projectlombok:lombok:1.18.26'
-
+test {
+    useJUnitPlatform()
 }
 
 jar {
@@ -29,6 +31,42 @@ jar {
     }
     manifest {
         attributes 'Main-Class': 'com.zemise.cellsbot.Main'
-
     }
 }
+
+
+docker {
+    // 名字+标签
+    // name "${project.name}:${project.version}"
+    // 名字+标签latest
+    name "zemise/cellsbot-${project.name}"
+    dockerfile file('src/docker/Dockerfile')
+    copySpec.from(jar).rename(".*", "CellsBot-alone.jar")
+//    copySpec.from('src/docker/run.sh').into('/docker')
+    buildArgs(['JAR_FILE': "CellsBot-alone.jar"])
+}
+
+
+dockerRun {
+    name 'bot'
+    image 'zemise/cellsbot-alone'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+dependencies {
+    implementation project(':common')
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // springboot test temp
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+

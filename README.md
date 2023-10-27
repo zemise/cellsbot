@@ -1,24 +1,36 @@
 # CellsBot
 
 CellsBot is an MC-QQ bot plugin for Minecraft servers.
+CellsBot-alone also can run in docker without Minecraft.
 
 ## Building
 CellsBot uses Gradle to handle dependencies & building.
 
 #### Requirements
-* Java 16 JDK or newer
+* Java 17 JDK or newer
 * Git
+* Gradle 7.4
 
 #### Compiling from source
-```sh
-git clone https://github.com/abc408880155/cellsbot
+```bash
+git clone https://github.com/zemise/cellsbot
 cd CellsBot/
-./gradlew build common
-./gradlew build bungee
-./gradlew build bukkit
+gradle clean common:build
+gradle clean alone:build
+gradle bungee:build
+gradle bukkit:build
+gradle waterfall:build
+```
+You can find the output jars in the `loader/build/libs` or `build/libs` directories.
+
+You also can build module cellsbot:alone by docker
+```bash
+git clone https://github.com/zemise/cellsbot
+cd CellsBot/
+gradlew clean common:build
+gradlew alone:docker
 ```
 
-You can find the output jars in the `loader/build/libs` or `build/libs` directories.
 
 ## Contributing
 #### Pull Requests
@@ -34,3 +46,4 @@ The project is split up into a few separate modules.
 
 ## License
 CellsBot is licensed under the permissive MIT license. Please see [`LICENSE.txt`](https://github.com/abc408880155/cellsbot/blob/main/LICENSE.txt) for more info.
+

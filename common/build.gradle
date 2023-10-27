@@ -17,10 +17,12 @@ dependencies {
     api 'com.google.guava:guava:31.1-jre'
     api 'commons-lang:commons-lang:2.6'
     // need 1.9
-//    api 'org.yaml:snakeyaml:1.9'
+    // api 'org.yaml:snakeyaml:1.9'
     implementation 'org.yaml:snakeyaml:1.9'
-    api 'ch.qos.logback:logback-classic:1.4.6'
-    api 'ch.qos.logback:logback-core:1.4.6'
+
+    // @Deprecated
+//    api 'ch.qos.logback:logback-classic:1.4.6'
+//    api 'ch.qos.logback:logback-core:1.4.6'
 
     // mysql
     api 'com.jcraft:jsch:0.1.54'
@@ -28,21 +30,28 @@ dependencies {
     api 'com.zaxxer:HikariCP:4.0.3'
 
     api 'com.google.code.gson:gson:2.10'
-
     api 'com.squareup.okhttp3:okhttp:4.11.0'
     api 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    api 'dnsjava:dnsjava:3.5.1'
 
+    // reflection
+    api 'org.reflections:reflections:0.10.2'
+    // myself projects
+    api 'io.github.zemise:Voice-Synthesis:1.0.0'
 
     implementation 'com.liferay:javax.xml.bind:2.3.0.LIFERAY-PATCHED-2'
-
     implementation 'org.seleniumhq.selenium:selenium-java:4.9.0'
     implementation 'commons-io:commons-io:2.11.0'
 
-    api 'io.github.zemise:Voice-Synthesis:1.0.0'
-
-    api 'dnsjava:dnsjava:3.5.1'
+    // temporary for fix-protocol-version
+    // see https://github.com/cssxsh/fix-protocol-version
+    implementation files('/Volumes/passSSD/CodeProject/ZemBotProject/fix-protocol-version-1.9.6.mirai2.jar')
+    implementation 'org.asynchttpclient:async-http-client:2.12.3'
 }
 
+//test {
+//    useJUnitPlatform()
+//}
 
 java {
     toolchain {
@@ -53,16 +62,3 @@ java {
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
-
-//jar {
-//    from {
-//        // common模块中包含了重复的module-info.class文件，需要设置一个解决重复文件的策略。
-//        // 可能是因为Mirai库自身包含了一个module-info.class文件。
-//        // 而common模块也声明了一个module-info.java文件，因此出现了冲突。
-//        // duplicatesStrategy选项设置为'exclude'，表示当出现重复文件时，Gradle将自动忽略其中一个文件
-//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-//        exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF',
-//                'AUTHORS', 'changelog.*', 'LICENSE*', 'module-info.class', 'README*', 'release-timestamp.*'
-//        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-//    }
-//}

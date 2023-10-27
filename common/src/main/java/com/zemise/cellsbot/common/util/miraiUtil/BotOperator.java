@@ -12,6 +12,7 @@ import net.mamoe.mirai.event.GlobalEventChannel;
 import net.mamoe.mirai.message.data.MessageChain;
 import net.mamoe.mirai.utils.BotConfiguration;
 import net.mamoe.mirai.utils.DeviceInfo;
+import xyz.cssxsh.mirai.tool.FixProtocolVersion;
 
 
 import java.io.File;
@@ -38,7 +39,9 @@ public class BotOperator {
         boolean loginByQR = config.getBoolean("loginByQR");
         File workingDir = new File(ConfigManager.pluginDirectory, "bot");
 
-        if (!workingDir.exists()) workingDir.mkdirs();
+        if (!workingDir.exists()) {
+            workingDir.mkdirs();
+        }
 
 
         BotFactory.BotConfigurationLambda botConfigurationLambda = botConfiguration -> {
@@ -73,6 +76,13 @@ public class BotOperator {
                     if (config.getBoolean("noBotLog")) {
                         noBotLog();
                     }
+
+                    // fix protocol
+                    FixProtocolVersion.fetch(MiraiProtocol.ANDROID_PHONE, "latest");
+                    FixProtocolVersion.fetch(MiraiProtocol.ANDROID_PHONE, "8.9.63");
+                    FixProtocolVersion.load(MiraiProtocol.ANDROID_PHONE);
+                    FixProtocolVersion.update();
+                    System.out.println(FixProtocolVersion.info());
 
                     setProtocol(MiraiProtocol.valueOf(config.getString("bot-login-device")));
 
@@ -112,5 +122,9 @@ public class BotOperator {
 
     public static void sendGroupMessage(Long groupID, Object message) {
         sendGroupMessage(Collections.singletonList(groupID), message);
+    }
+
+    public static void logout(){
+        bot.close();
     }
 }

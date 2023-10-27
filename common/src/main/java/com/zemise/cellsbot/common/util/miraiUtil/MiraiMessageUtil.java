@@ -126,7 +126,7 @@ public class MiraiMessageUtil {
     }
 
     /**
-     * 获取所有群成员的 QQ，不包含机器人自己
+     * 获取所有群成员的 qq，不包含机器人自己
      *
      * @param event 群消息事件
      * @return 群成员ID列表

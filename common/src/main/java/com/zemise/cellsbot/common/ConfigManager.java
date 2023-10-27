@@ -21,7 +21,6 @@ public class ConfigManager {
     public static ConfigManager instance;
     @Getter
     private static Configuration config, messageConfig, autoReplyConfig;
-
     //所有配置文件
     private static String[] config_files = {"config.yml", "messages.yml", "auto_reply.yml", "cells.png"};
 
@@ -45,13 +44,16 @@ public class ConfigManager {
         setPluginDirectory(directory);
 
         //判断是否有相应的配置文件夹，如果无，生成plugin文件夹
-        if (!directory.exists()) directory.mkdirs();
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
 
         //生成默认的配置文件，文件不存在时,就生成；存在同名文件，不进行覆盖
         for (String s : config_files) {
             File file = new File(directory, s);
             if (!file.exists()) {
                 try (InputStream is = ConfigManager.class.getClassLoader().getResourceAsStream(s)) {
+                    assert is != null;
                     Files.copy(is, file.toPath());
                 } catch (IOException e) {
                     e.printStackTrace();

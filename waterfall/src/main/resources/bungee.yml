@@ -7,9 +7,9 @@ softDepends:
   - LuckPerms
 
 commands:
-  cbb:
+  cb:
     description: command of CellsBot
-    aliases: [cbb]
+    aliases: [cb]
 
 permissions:
   CellsBot.reload:

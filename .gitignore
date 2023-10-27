@@ -1,3 +1,9 @@
+
+#dev file
+application-dev.yml
+Cells/
+logs/
+
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
